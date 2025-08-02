@@ -1,72 +1,71 @@
 MPEG-1 Style Video Compression System with GUI
-Project Overview
-This project implements a simple MPEG-1 style video compression and decompression system in Python. It uses common video compression techniques like:
+📽️ Project Overview
+This project implements a simple MPEG-1 style video compression and decompression system in Python. It demonstrates the core concepts of video compression using:
 
-Intra-frame compression (I-frames): Compresses individual frames using block-based Discrete Cosine Transform (DCT), quantization, and run-length encoding.
+Intra-frame compression (I-frames): Compresses individual frames using block-based DCT, quantization, and run-length encoding.
 
 Inter-frame compression (P-frames): Uses motion estimation and compensation to encode differences between frames.
 
-Basic scalability and performance metrics: Evaluates compression quality using PSNR and compression ratio.
+Scalability and performance metrics: Includes evaluation using PSNR and compression ratio.
 
-A Graphical User Interface (GUI) built with Tkinter allows users to:
+A simple GUI (built with Tkinter) allows users to:
 
-Select a video file to encode (compress).
+Select a video file to compress.
 
-See compression size and quality metrics.
+View compression size and quality metrics.
 
-Select an encoded file to decode back to video.
+Decode an encoded file back to video.
+✨ Features
+✅ I-frame and P-frame based compression
+✅ Block-based motion estimation (for P-frames)
+✅ DCT, quantization, zigzag scan, and run-length encoding
+✅ Save and load encoded videos
+✅ Shows PSNR and compression ratio in the GUI
+✅ Simple user-friendly interface
 
-Features
-Supports I-frame and P-frame based compression.
+Install requirements:
 
-Motion Estimation using block matching for P-frames.
+pip install -r requirements.txt
 
-DCT, Quantization, Zigzag scanning, and Run-Length Encoding for compression.
-
-Encode and decode videos with saved files.
-
-Shows PSNR (quality metric) and compression size in the GUI.
-
-User-friendly simple interface for encoding and decoding.
-
-How to Use
 Run the application:
-
-bash
 python main.py
-Click Encode Video File to pick an input .avi video to compress.
+To Encode:
 
-Wait for encoding to finish; the GUI will display original size, compressed size, and PSNR.
+Click Encode Video File
 
-Click Decode Encoded File to pick the saved encoded file (.npy) to reconstruct the video.
+Choose an .avi file to compress
 
-Decoded video will be saved as an .avi file in the outputs/ folder.
+Wait for the process to complete
 
-Project Structure
-main.py — Launches the GUI.
+The GUI will show original size, compressed size, and PSNR
 
-gui/ — User interface code.
+To Decode:
 
-codec/ — Core encoding and decoding logic.
+Click Decode Encoded File
 
-motion/ — Motion estimation and compensation code.
+Select the saved .npy encoded file
 
-outputs/ — Folder for encoded data and decoded videos.
-
-requirements.txt — Lists required Python packages.
-
+The decoded video will be saved as an .avi in the outputs/ folder
+├── main.py                 # Launches the GUI
+├── gui/                    # GUI logic (Tkinter)
+├── codec/                  # Encoding and decoding logic
+├── motion/                 # Motion estimation and compensation
+├── outputs/                # Output folder (encoded + decoded videos)
+├── requirements.txt        # Python dependencies
+└── README.md               # Project documentation
 Requirements
 Python 3.x
 
-Packages: numpy, opencv-python, scipy, tk (install via pip install -r requirements.txt)
+Required packages:
+numpy
+opencv-python
+scipy
+tk (usually pre-installed with Python)
 
-Notes
 This project is a basic demonstration of video compression concepts.
-
-Currently, B-frame support and chroma channel compression are not implemented.
-
-You can extend the project by adding support for more frame types, color channels, better entropy coding, or a more advanced GUI.
-
-If you have any questions or need help, feel free to ask!
-
-You can copy-paste this text into your README.md. It’s designed for simplicity and good understanding by users new to video compression or Python projects. Let me know if you want it more technical or with additional sections!
+B-frames and chroma subsampling are not implemented.
+Possible improvements:
+Add B-frame support
+Implement chroma channel compression (YUV)
+Improve entropy coding (e.g., Huffman)
+Enhance the GUI/UX
